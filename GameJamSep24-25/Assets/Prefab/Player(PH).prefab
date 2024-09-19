@@ -15,7 +15,11 @@ GameObject:
   - component: {fileID: 5980168791226917921}
   - component: {fileID: 7981198752863993876}
   - component: {fileID: 9142528193965342501}
+<<<<<<< Updated upstream
   - component: {fileID: 318429766518813894}
+=======
+  - component: {fileID: 6096955981383580089}
+>>>>>>> Stashed changes
   m_Layer: 7
   m_Name: Player(PH)
   m_TagString: Player
@@ -181,7 +185,7 @@ MonoBehaviour:
     m_ActionName: PlayerKeyboard/Block/Counter[/Mouse/leftButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: PlayerController
+  m_DefaultActionMap: f6b6ba13-eeed-41d4-9bac-3f5921cf4b02
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &9142528193965342501
@@ -197,15 +201,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_movementSpeed: 10
+<<<<<<< Updated upstream
 --- !u!95 &318429766518813894
 Animator:
   serializedVersion: 5
+=======
+--- !u!114 &6096955981383580089
+MonoBehaviour:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5082453857300608351}
   m_Enabled: 1
+<<<<<<< Updated upstream
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 12492d46f54eaea4daf40128f2e896ca, type: 2}
   m_CullingMode: 0
@@ -218,6 +228,12 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305d212a2635e704a8bd347bcc4ab81f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> Stashed changes
 --- !u!1 &9203258873647717292
 GameObject:
   m_ObjectHideFlags: 0
