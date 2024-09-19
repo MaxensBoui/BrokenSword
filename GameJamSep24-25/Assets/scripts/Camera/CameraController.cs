@@ -10,13 +10,24 @@ public class CameraController : MonoBehaviour
     [SerializeField] private float m_smoothTime = 0.2f;
     private Vector3 m_targetTransform;
     private Vector3 m_velocity = Vector3.zero;
-  
+    [SerializeField] private float m_yaw;
+    [SerializeField] private float m_pitch;
+    [SerializeField] private float m_dolly;
+    private void Start()
+    {
+        m_positionOffset = transform.position;
+    }
+    void LateUpdate()
+    {
+        m_targetTransform = m_positionOffset + m_player.transform.position;
+        transform.position = Vector3.SmoothDamp(transform.position, m_targetTransform, ref m_velocity, m_smoothTime);
+    }
 
-    void Update()
+    private void OnValidate()
     {
 
         m_pitch = Mathf.Clamp(m_pitch, -Mathf.PI * s_half, Mathf.PI * s_half);
-        Vector3 orbit = new Vector3(Mathf.Cos(m_yaw)*Mathf.Cos(m_pitch), Mathf.Sin(m_pitch), Mathf.Sin(m_yaw)*Mathf.Cos(m_pitch));
+        Vector3 orbit = new Vector3(Mathf.Cos(m_yaw) * Mathf.Cos(m_pitch), Mathf.Sin(m_pitch), Mathf.Sin(m_yaw) * Mathf.Cos(m_pitch));
         Vector3 position = m_player.transform.position + orbit * m_dolly;
 
         transform.position = position;
