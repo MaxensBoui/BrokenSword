@@ -22,6 +22,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Switch",
+                    "type": "Button",
+                    "id": "2e7a7b77-c7f7-4941-9c31-966dda231b1b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -46,6 +55,17 @@
                     "action": "Block/Counter",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6436c13f-7229-41d7-b0cf-60d045196841",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -54,13 +74,13 @@
             "id": "0e845706-dbe9-4a42-80bc-25e5bed6fec2",
             "actions": [
                 {
-                    "name": "Movement",
-                    "type": "Button",
+                    "name": "UpMovement",
+                    "type": "Value",
                     "id": "9fd42914-0580-497a-8ad8-497302c29459",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Block/Counter",
@@ -70,6 +90,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Switch",
+                    "type": "Value",
+                    "id": "3edfab60-184d-4958-b3d5-ec59f93aa7a0",
+                    "expectedControlType": "Stick",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "SideMovement",
+                    "type": "Value",
+                    "id": "82af0110-46e7-4d29-941e-9db063b35dab",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -80,7 +118,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "UpMovement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -91,7 +129,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
+                    "action": "UpMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -102,40 +140,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "X Axis",
-                    "id": "fc45baea-f7b6-4b85-8211-b2fa9c689e18",
-                    "path": "1DAxis",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "negative",
-                    "id": "6bbb7148-c4d4-476b-bfa3-c0099d005fd7",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "4208d84c-71a2-4fd1-8117-b3981382cb98",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Movement",
+                    "action": "UpMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -149,6 +154,50 @@
                     "action": "Block/Counter",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0cef5081-d85c-4350-a34a-5febdf0581d2",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Switch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "X Axis",
+                    "id": "7a4d68eb-e161-4f06-ab14-467d9b6f5e2e",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SideMovement",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "6145078a-b597-4257-a594-db9f60574bd2",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SideMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "aed1e594-574d-4fca-8e37-d9565b9b4e4b",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SideMovement",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         }

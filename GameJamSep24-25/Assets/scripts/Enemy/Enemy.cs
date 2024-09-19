@@ -9,10 +9,17 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float m_speed = 10f;
     [SerializeField] private float m_currentSpeed;
     [SerializeField] private float m_deathTimer = 2f; //Timer at which the enemy disappears, must be after the VFX and Animation are done (value is a placeholder)
-    [SerializeField] private float m_offsetDist = 1f; //distance at which the enemy will stop going towards the player
+    [SerializeField] private float m_offsetDist = 1.5f; //distance at which the enemy will stop going towards the player
+    [SerializeField] private Animator m_anim;
 
     [SerializeField] private float m_spawnTimer = 2f;
     private float m_timer;
+
+    private float m_atkTimer;
+    [SerializeField] private float m_atkRate = 2f;
+
+     private bool m_counterable = false;
+     public bool Counterable => m_counterable;
 
     private EEnemyStateMach m_state;
 
@@ -25,7 +32,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        m_target = GameObject.FindWithTag("Player");
+        if (m_target == null) {m_target = GameObject.FindWithTag("Player");}
         m_state = EEnemyStateMach.Spawning;
         m_currentSpeed = m_speed;
     }
@@ -58,7 +65,7 @@ public class Enemy : MonoBehaviour
         //when VFX Done :
         //m_state = EEnemyStateMach.Attacking
 
-        if (m_timer == m_spawnTimer) 
+        if (m_timer >= m_spawnTimer) 
         {
             m_state = EEnemyStateMach.Attacking;
         }
@@ -87,12 +94,18 @@ public class Enemy : MonoBehaviour
             m_currentSpeed = 0;
         }
 
+        m_atkTimer += Time.deltaTime;
+
         //placeholder script for attack pattern
-        //if (m_timer >= m_attackRate)
-        //{
-        //      insert attack anim and vfx
-        //    m_timer = 0f;
-        //}
+        if (m_atkTimer >= m_atkRate)
+        {
+            //attackanim
+            //insert attack anim and vfx
+
+
+            m_anim.Play("EnemyAttackAnim");
+            m_atkTimer = 0f;
+        }
 
     }
 
@@ -101,5 +114,14 @@ public class Enemy : MonoBehaviour
         //insert death VFX
         //insert death animation
         Destroy(gameObject, m_deathTimer);
+    }
+
+    public void CounterableTrue()
+    {
+        m_counterable = true;
+    }
+    public void CounterableFalse()
+    {
+        m_counterable = false;
     }
 }

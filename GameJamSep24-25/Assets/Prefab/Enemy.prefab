@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3690341895113700622}
   - component: {fileID: 3453179374271658625}
   - component: {fileID: 6577963315087136426}
+  - component: {fileID: 6928377912103204040}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: ecdef2ede97f46548931af5c87013015, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,6 +119,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9efc1f0045e79254c99941777dd27e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_target: {fileID: 0}
   m_speed: 10
+  m_currentSpeed: 0
   m_deathTimer: 2
+  m_offsetDist: 1.5
+  m_anim: {fileID: 6928377912103204040}
+  m_spawnTimer: 2
+  m_atkRate: 5
+  m_counterable: 0
+--- !u!95 &6928377912103204040
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5346198948382740751}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 97586e8b18f8cc4498e84ef0adf7376c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
