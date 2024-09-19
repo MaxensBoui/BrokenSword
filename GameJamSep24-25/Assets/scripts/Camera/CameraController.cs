@@ -10,6 +10,7 @@ public class CameraController : MonoBehaviour
     private Vector3 m_cameraTransform;
     private Vector3 m_velocity = Vector3.zero;
   
+
     void Update()
     {
         m_cameraTransform = m_positionOffset + m_player.transform.position;

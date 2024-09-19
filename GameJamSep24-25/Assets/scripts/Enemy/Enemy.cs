@@ -5,11 +5,14 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private GameObject m_target;
+    private GameObject m_target;
     [SerializeField] private float m_speed = 10f;
-    [SerializeField] private float m_currentSpeed = m_speed;
+    [SerializeField] private float m_currentSpeed;
     [SerializeField] private float m_deathTimer = 2f; //Timer at which the enemy disappears, must be after the VFX and Animation are done (value is a placeholder)
     [SerializeField] private float m_offsetDist = 1f; //distance at which the enemy will stop going towards the player
+
+    [SerializeField] private float m_spawnTimer = 2f;
+    private float m_timer;
 
     private EEnemyStateMach m_state;
 
@@ -24,6 +27,7 @@ public class Enemy : MonoBehaviour
     {
         m_target = GameObject.FindWithTag("Player");
         m_state = EEnemyStateMach.Spawning;
+        m_currentSpeed = m_speed;
     }
 
     void Update()
@@ -42,6 +46,10 @@ public class Enemy : MonoBehaviour
                     break;
             }
         }
+
+
+        //temporary timer
+        m_timer += Time.deltaTime;
     }
 
     private void Spawn()
@@ -49,23 +57,30 @@ public class Enemy : MonoBehaviour
         //Insert VFX of spawning
         //when VFX Done :
         //m_state = EEnemyStateMach.Attacking
+
+        if (m_timer == m_spawnTimer) 
+        {
+            m_state = EEnemyStateMach.Attacking;
+        }
+
     }
 
     private void Attack()
     {
         transform.LookAt(m_target.transform.position);
-       
+
         //Make attack at random timing
 
         //When countered : 
         //m_state = EEnemyStateMach.Dead
+        transform.position = Vector3.MoveTowards(transform.position, m_target.transform.position, m_currentSpeed * Time.deltaTime);
 
-        
+
         float distance = Mathf.Abs(Vector3.Distance(transform.position, m_target.transform.position));
 
         if (distance > m_offsetDist)
         {
-            transform.position = Vector3.MoveTowards(transform.position, m_target.transform.position, m_speed * Time.deltaTime);
+            m_currentSpeed = m_speed;
         }
         else
         {
