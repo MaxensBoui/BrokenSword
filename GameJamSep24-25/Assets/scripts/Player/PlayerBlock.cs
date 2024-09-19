@@ -11,6 +11,10 @@ public class PlayerBlock : MonoBehaviour
     private Enemy m_enemy;
     // private List<GameObject> m_enemies = new List<GameObject>();
     private bool m_canCounter;
+
+    [SerializeField] private Animator m_animator;
+    [SerializeField] private GameObject m_counterCollider;
+
     void Start()
     {
 
@@ -20,10 +24,10 @@ public class PlayerBlock : MonoBehaviour
     {
 
         print(m_canCounter);
-        EnemyDetection();
+        //EnemyDetection();
     }
-    private void EnemyDetection()
-    {
+    //private void EnemyDetection()
+    //{
 
         //foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
         //{
@@ -41,39 +45,52 @@ public class PlayerBlock : MonoBehaviour
         //    }
 
         //}
-    }
+//
     public void OnBlockCounter(InputValue rea)
     {
         float value = rea.Get<float>();
         if (value > 0)
         {
-            if (m_canCounter)
-            {
-                print("t");
-                Instantiate(m_counterParticle, transform.position, Quaternion.identity);
-            }
-            else
-            {
-                m_shield.SetActive(true);
-            }
-        }
-        else
-            m_shield.SetActive(false);
+            print("t");
+            Instantiate(m_counterParticle, transform.position, Quaternion.identity);
+            m_animator.Play("PlayerCounter");
 
-    }
+            //    if (m_canCounter)
+            //    {
+            //        print("t");
+            //        Instantiate(m_counterParticle, transform.position, Quaternion.identity);
+            //        m_animator.Play("PlayerCounter");
 
-    private void OnDrawGizmos()
-    {
-        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawLine(transform.position, enemy.transform.position);
+            //    }
+            //    else
+            //    {
+            //        m_shield.SetActive(true);
+            //    }
+            //}
+            //    m_shield.SetActive(false);
         }
     }
+
+    //private void OnDrawGizmos()
+    //{
+    //    foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+    //    {
+    //        Gizmos.color = Color.red;
+    //        Gizmos.DrawLine(transform.position, enemy.transform.position);
+    //    }
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.TryGetComponent<Enemy>(out Enemy enemy))
-            m_canCounter = true;
+        Destroy(other.gameObject.transform.parent.gameObject);
+        Debug.Log("enteredCollider");
+        Debug.Log(other.gameObject.name);
+        Debug.Log(other.transform.parent.name);
     }
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.TryGetComponent<Enemy>(out Enemy enemy))
+    //        m_canCounter = true;
+    //}
 }

@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour
      private bool m_counterable = false;
      public bool Counterable => m_counterable;
 
+    //[SerializeField] private GameObject m_collider;
+
     private EEnemyStateMach m_state;
 
     public enum EEnemyStateMach
@@ -35,6 +37,7 @@ public class Enemy : MonoBehaviour
         if (m_target == null) {m_target = GameObject.FindWithTag("Player");}
         m_state = EEnemyStateMach.Spawning;
         m_currentSpeed = m_speed;
+        //m_collider.SetActive(false);
     }
 
     void Update()
@@ -58,6 +61,8 @@ public class Enemy : MonoBehaviour
 
         //temporary timer
         m_timer += Time.deltaTime;
+
+        //Debug.Log(m_collider.activeSelf);
     }
 
     private void Spawn()
