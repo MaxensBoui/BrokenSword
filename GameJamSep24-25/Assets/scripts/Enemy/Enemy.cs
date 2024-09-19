@@ -39,6 +39,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+       
         {
             switch (m_state)
             {

@@ -398,7 +398,7 @@ Transform:
   m_GameObject: {fileID: 961739749}
   serializedVersion: 2
   m_LocalRotation: {x: 0.45271587, y: -0.024456844, z: 0.012423243, w: 0.8912328}
-  m_LocalPosition: {x: 0.87978625, y: 22.675581, z: -16.018091}
+  m_LocalPosition: {x: 0.87978625, y: 23.085583, z: -16.018091}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5cd51c2174f384bacd50dbe9aeac17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_player: {fileID: 1302612673}
+  m_player: {fileID: 1597559079}
   m_smoothTime: 0.2
   m_yaw: 29.9
   m_pitch: 0.94
@@ -493,6 +493,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 5346198948382740751, guid: 975b6c5e518330e439e5b66b75e6beb0, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6577963315087136426, guid: 975b6c5e518330e439e5b66b75e6beb0, type: 3}
       propertyPath: m_anim
       value: 
@@ -554,11 +558,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1302612673 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5082453857300608351, guid: f19a0ea63e8e37146aa08f57c68e5bda, type: 3}
-  m_PrefabInstance: {fileID: 6820364059543042705}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1569813330
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,7 +619,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 54382744ae2daff41aa2a170e4e20dd7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -665,7 +664,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &6820364059543042705
+--- !u!1 &1597559079 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5082453857300608351, guid: f19a0ea63e8e37146aa08f57c68e5bda, type: 3}
+  m_PrefabInstance: {fileID: 2018560994}
+  m_PrefabAsset: {fileID: 0}
+--- !u!135 &1597559089
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597559079}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 4.49
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &2018560994
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -679,7 +704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 513037985264532692, guid: f19a0ea63e8e37146aa08f57c68e5bda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.71
+      value: 1.12
       objectReference: {fileID: 0}
     - target: {fileID: 513037985264532692, guid: f19a0ea63e8e37146aa08f57c68e5bda, type: 3}
       propertyPath: m_LocalPosition.z
@@ -717,14 +742,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player(PH)
       objectReference: {fileID: 0}
-    - target: {fileID: 6096955981383580089, guid: f19a0ea63e8e37146aa08f57c68e5bda, type: 3}
-      propertyPath: m_blockDistance
-      value: 3
+    - target: {fileID: 9057469786172592795, guid: f19a0ea63e8e37146aa08f57c68e5bda, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5082453857300608351, guid: f19a0ea63e8e37146aa08f57c68e5bda, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1597559089}
   m_SourcePrefab: {fileID: 100100000, guid: f19a0ea63e8e37146aa08f57c68e5bda, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -734,5 +762,5 @@ SceneRoots:
   - {fileID: 203844589}
   - {fileID: 1160234427}
   - {fileID: 1569813334}
-  - {fileID: 6820364059543042705}
   - {fileID: 970212988}
+  - {fileID: 2018560994}

@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private float m_yValue;
     private float m_xValue;
 
+    [SerializeField] private ParticleSystem m_walkParticle;
+
     //My attempt at rotating
     ////[SerializeField] private float m_smoothDampSpeed = 0.05f;
     ////private float m_currentVelocity;
@@ -36,15 +38,15 @@ public class PlayerMovement : MonoBehaviour
             m_movement = new Vector3(move.x, 0, move.y);
         transform.Translate(m_movement * Time.deltaTime * m_movementSpeed);
 
-<<<<<<< Updated upstream
+
         //  transform.Rotate(move);
 
         //my attempt at rotating
         ////var targetAngle = Mathf.Atan2(move.x, move.y) * Mathf.Rad2Deg;
         ////var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref m_currentVelocity, m_smoothDampSpeed);
         ////transform.rotation = Quaternion.Euler(0, angle, 0);
-=======
->>>>>>> Stashed changes
+
+
     }
 
     #region Keyboard
