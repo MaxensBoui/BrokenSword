@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     private float m_atkTimer;
     [SerializeField] private float m_atkRate = 2f;
 
+    [SerializeField] private bool m_counterable = false;
+
     private EEnemyStateMach m_state;
 
     public enum EEnemyStateMach
