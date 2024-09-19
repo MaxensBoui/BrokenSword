@@ -514,6 +514,18 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5082453857300608351, guid: f19a0ea63e8e37146aa08f57c68e5bda, type: 3}
   m_PrefabInstance: {fileID: 6820364059543042705}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1302612681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1302612673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 305d212a2635e704a8bd347bcc4ab81f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1569813330
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,10 +684,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player(PH)
       objectReference: {fileID: 0}
+    - target: {fileID: 7981198752863993876, guid: f19a0ea63e8e37146aa08f57c68e5bda, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: PlayerKeyboard
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5082453857300608351, guid: f19a0ea63e8e37146aa08f57c68e5bda, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1302612681}
   m_SourcePrefab: {fileID: 100100000, guid: f19a0ea63e8e37146aa08f57c68e5bda, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
