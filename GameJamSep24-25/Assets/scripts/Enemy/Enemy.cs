@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float m_currentSpeed;
     [SerializeField] private float m_deathTimer = 2f; //Timer at which the enemy disappears, must be after the VFX and Animation are done (value is a placeholder)
     [SerializeField] private float m_offsetDist = 1.5f; //distance at which the enemy will stop going towards the player
+    [SerializeField] private Animator m_anim;
 
     [SerializeField] private float m_spawnTimer = 2f;
     private float m_timer;
@@ -97,6 +98,9 @@ public class Enemy : MonoBehaviour
         {
             //attackanim
             //insert attack anim and vfx
+
+
+            m_anim.Play("EnemyAttackAnim");
             m_atkTimer = 0f;
         }
 
