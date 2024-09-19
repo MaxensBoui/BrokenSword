@@ -18,7 +18,8 @@ public class Enemy : MonoBehaviour
     private float m_atkTimer;
     [SerializeField] private float m_atkRate = 2f;
 
-    [SerializeField] private bool m_counterable = false;
+     private bool m_counterable = false;
+     public bool Counterable => m_counterable;
 
     private EEnemyStateMach m_state;
 
@@ -113,5 +114,14 @@ public class Enemy : MonoBehaviour
         //insert death VFX
         //insert death animation
         Destroy(gameObject, m_deathTimer);
+    }
+
+    public void CounterableTrue()
+    {
+        m_counterable = true;
+    }
+    public void CounterableFalse()
+    {
+        m_counterable = false;
     }
 }

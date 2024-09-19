@@ -26,25 +26,25 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         m_keyboardMovement = new Vector3(m_xValue, 0, m_yValue); 
-        transform.Translate(m_keyboardMovement * Time.deltaTime * m_movementSpeed);
 
-        //m_charaControl.Move(m_movement * Time.deltaTime * m_movementSpeed);
+        m_charaControl.Move(m_movement * Time.deltaTime * m_movementSpeed);
 
     }
     public void OnMovement(InputValue readValue)
     {
-        Debug.Log("k");
         Vector2 move = readValue.Get<Vector2>();
-        print("move");
             m_movement = new Vector3(move.x, 0, move.y);
         transform.Translate(m_movement * Time.deltaTime * m_movementSpeed);
 
+<<<<<<< Updated upstream
         //  transform.Rotate(move);
 
         //my attempt at rotating
         ////var targetAngle = Mathf.Atan2(move.x, move.y) * Mathf.Rad2Deg;
         ////var angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref m_currentVelocity, m_smoothDampSpeed);
         ////transform.rotation = Quaternion.Euler(0, angle, 0);
+=======
+>>>>>>> Stashed changes
     }
 
     #region Keyboard
@@ -58,12 +58,5 @@ public class PlayerMovement : MonoBehaviour
         m_xValue = readValue.Get<float>();
         
     }
-
-  /*  public void OnSwitch(InputValue readValue)
-    {
-        Vector2 notZero = readValue.Get<Vector2>();
-        if(notZero != Vector2.zero)
-            m_actionMap.
-    }*/
     #endregion
 }
