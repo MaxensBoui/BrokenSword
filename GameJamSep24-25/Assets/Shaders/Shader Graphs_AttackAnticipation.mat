@@ -39,6 +39,7 @@ Material:
     m_Floats:
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _Sword_attack: 0
     m_Colors:
     - _Attack: {r: 0.8679245, g: 0.09416161, b: 0.09416161, a: 0}
     - _Blue: {r: 0.17621925, g: 0.31562036, b: 0.8301887, a: 0}
