@@ -50,11 +50,11 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
-    public void OnSwitch(InputValue readValue)
+  /*  public void OnSwitch(InputValue readValue)
     {
         Vector2 notZero = readValue.Get<Vector2>();
         if(notZero != Vector2.zero)
             m_actionMap.
-    }
+    }*/
     #endregion
 }
