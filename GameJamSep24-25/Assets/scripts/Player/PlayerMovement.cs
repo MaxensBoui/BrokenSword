@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 move = readValue.Get<Vector2>();
         m_movement = new Vector3(move.x, 0, move.y);
+
+        transform.Rotate(move);
     }
  
 }
