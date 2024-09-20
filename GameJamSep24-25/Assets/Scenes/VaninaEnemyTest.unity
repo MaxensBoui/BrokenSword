@@ -169,7 +169,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &623097943
+--- !u!1001 &142309366
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -183,7 +183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2128601134295311952, guid: be11b362ddb75e448bea9c4ac3603728, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.089
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2128601134295311952, guid: be11b362ddb75e448bea9c4ac3603728, type: 3}
       propertyPath: m_LocalPosition.y
@@ -903,8 +903,8 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: b2eb0ad54b281574d93aae1146ee4ff9, type: 2}
+  - {fileID: 2100000, guid: b2eb0ad54b281574d93aae1146ee4ff9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1997,4 +1997,4 @@ SceneRoots:
   - {fileID: 1211289504}
   - {fileID: 543450651891195202}
   - {fileID: 543450653153446944}
-  - {fileID: 623097943}
+  - {fileID: 142309366}
