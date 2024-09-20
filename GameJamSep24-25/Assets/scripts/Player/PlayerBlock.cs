@@ -29,15 +29,15 @@ public class PlayerBlock : MonoBehaviour
     //private void EnemyDetection()
     //{
 
-        //foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
-        //{
-        //    if (TryGetComponent<Enemy>(out Enemy enemies))
-        //    {
-        //        m_enemy = GetComponent<Enemy>();
-        //        Debug.Log(m_enemy.Counterable);
+    //foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("Enemy"))
+    //{
+    //    if (TryGetComponent<Enemy>(out Enemy enemies))
+    //    {
+    //        m_enemy = GetComponent<Enemy>();
+    //        Debug.Log(m_enemy.Counterable);
 
-        //    }
-        //    float enemiesFromPlayer = Vector3.Distance(transform.position, enemy.transform.position);
+    //    }
+    //    float enemiesFromPlayer = Vector3.Distance(transform.position, enemy.transform.position);
         //    if (enemiesFromPlayer < m_blockDistance && m_enemy.Counterable == true)
         //    {
         //        print("amamama");
@@ -52,7 +52,7 @@ public class PlayerBlock : MonoBehaviour
         if (value > 0)
         {
             print("t");
-            Instantiate(m_counterParticle, transform.position, Quaternion.identity);
+            //Instantiate(m_counterParticle, transform.position, Quaternion.identity);
             m_animator.Play("PlayerCounter");
 
             //    if (m_canCounter)
@@ -93,4 +93,5 @@ public class PlayerBlock : MonoBehaviour
     //    if (other.gameObject.TryGetComponent<Enemy>(out Enemy enemy))
     //        m_canCounter = true;
     //}
+
 }

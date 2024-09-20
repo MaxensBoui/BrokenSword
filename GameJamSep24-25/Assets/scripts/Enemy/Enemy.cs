@@ -18,8 +18,8 @@ public class Enemy : MonoBehaviour
     private float m_atkTimer;
     [SerializeField] private float m_atkRate = 2f;
 
-     private bool m_counterable = false;
-     public bool Counterable => m_counterable;
+    private bool m_counterable = false;
+    public bool Counterable => m_counterable;
 
     //[SerializeField] private GameObject m_collider;
 
@@ -34,15 +34,14 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        if (m_target == null) {m_target = GameObject.FindWithTag("Player");}
+        if (m_target == null) { m_target = GameObject.FindWithTag("Player"); }
         m_state = EEnemyStateMach.Spawning;
         m_currentSpeed = m_speed;
         //m_collider.SetActive(false);
     }
-
     void Update()
     {
-       
+
         {
             switch (m_state)
             {
@@ -71,7 +70,7 @@ public class Enemy : MonoBehaviour
         //when VFX Done :
         //m_state = EEnemyStateMach.Attacking
 
-        if (m_timer >= m_spawnTimer) 
+        if (m_timer >= m_spawnTimer)
         {
             m_state = EEnemyStateMach.Attacking;
         }

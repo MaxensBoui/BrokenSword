@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
         if (m_timer >= m_spawnTick)
         {
             Instantiate(m_enemyPrefab, Random.insideUnitSphere * m_circleSize, Quaternion.identity);
-            Debug.Log("SpawningEnemy");
+            //Debug.Log("SpawningEnemy");
             m_timer = 0;
         }
     }
