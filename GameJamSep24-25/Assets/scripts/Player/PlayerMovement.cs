@@ -62,6 +62,8 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+
+
     #region Keyboard
     public void OnUpMovement(InputValue readValue)
     {
