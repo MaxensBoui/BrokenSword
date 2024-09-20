@@ -171,9 +171,9 @@ GameObject:
   - component: {fileID: 4614262092991854905}
   - component: {fileID: 5753953829104836862}
   - component: {fileID: 613752059668373655}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy_Meshed
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -208,13 +208,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9efc1f0045e79254c99941777dd27e40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_speed: 10
+  m_speed: 8
   m_currentSpeed: 0
   m_deathTimer: 2
-  m_offsetDist: 2.27
+  m_offsetDist: 2
   m_anim: {fileID: 613752059668373655}
   m_pointObtained: 150
+  m_pointLost: 50
   m_multiplicatorBonus: 0.25
+  m_destroyVisualize: {fileID: 1783598322827911636, guid: 7295a360574bf7346a56dc0e76f0c4b3, type: 3}
   m_spawnTimer: 2
   m_atkRate: 5
 --- !u!54 &5753953829104836862
@@ -735,7 +737,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 759
+    m_Bits: 631
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
