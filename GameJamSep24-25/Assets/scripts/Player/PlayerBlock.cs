@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,22 +9,24 @@ public class PlayerBlock : MonoBehaviour
     [SerializeField] private float m_blockDistance = 3.0f;
     [SerializeField] private GameObject m_counterParticle;
     [SerializeField] private GameObject m_shield;
+    [SerializeField] private GameObject m_fallingShield;
+    [SerializeField] private Transform m_shieldPosition;
     private Enemy m_enemy;
     // private List<GameObject> m_enemies = new List<GameObject>();
     private bool m_canCounter;
+    private bool m_canTakeShield;
 
     [SerializeField] private Animator m_animator;
     [SerializeField] private GameObject m_counterCollider;
 
-    void Start()
+    private void Start()
     {
-
+        m_canCounter = true;
+        m_canTakeShield = false;
     }
 
     void Update()
     {
-
-        print(m_canCounter);
         //EnemyDetection();
     }
     //private void EnemyDetection()
@@ -38,21 +41,20 @@ public class PlayerBlock : MonoBehaviour
 
     //    }
     //    float enemiesFromPlayer = Vector3.Distance(transform.position, enemy.transform.position);
-        //    if (enemiesFromPlayer < m_blockDistance && m_enemy.Counterable == true)
-        //    {
-        //        print("amamama");
-        //        m_canCounter = true;
-        //    }
+    //    if (enemiesFromPlayer < m_blockDistance && m_enemy.Counterable == true)
+    //    {
+    //        print("amamama");
+    //        m_canCounter = true;
+    //    }
 
-        //}
-//
+    //}
+    //
     public void OnBlockCounter(InputValue rea)
     {
         float value = rea.Get<float>();
         if (value > 0)
         {
             print("t");
-            //Instantiate(m_counterParticle, transform.position, Quaternion.identity);
             m_animator.Play("PlayerCounter");
 
             //    if (m_canCounter)
@@ -82,10 +84,39 @@ public class PlayerBlock : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject.transform.parent.gameObject);
-        Debug.Log("enteredCollider");
-        Debug.Log(other.gameObject.name);
-        Debug.Log(other.transform.parent.name);
+        if (other.gameObject.CompareTag("Enemy") && m_canCounter)
+        {
+            Instantiate(m_counterParticle, transform.position, Quaternion.identity);
+            Destroy(other.gameObject.transform.parent.gameObject);
+            Debug.Log("enteredCollider");
+            Debug.Log(other.gameObject.name);
+            Debug.Log(other.transform.parent.name);
+        }
+
+        if (other.gameObject.CompareTag("Thunder"))
+        {
+            m_canTakeShield = true;
+            m_canCounter = false;
+            m_shield.SetActive(false);
+            Instantiate(m_fallingShield, m_shieldPosition.position, Quaternion.identity);
+            // StartCoroutine(ShieldRecovery());
+        }
+
+        if (other.gameObject.CompareTag("Shield") && !m_canTakeShield)
+        {
+            Destroy(other.gameObject.transform.parent.gameObject);
+            m_shield.SetActive(true);
+            m_canCounter = true;
+            m_canTakeShield = false;
+        }
+
+    }
+
+    IEnumerator ShieldRecovery()
+    {
+        m_shield.SetActive(false);
+        yield return new WaitForSeconds(3);
+        m_shield.SetActive(true);
     }
 
     //private void OnTriggerEnter(Collider other)

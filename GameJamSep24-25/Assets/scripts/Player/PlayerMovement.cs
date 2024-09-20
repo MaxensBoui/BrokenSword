@@ -31,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
 
         m_charaControl.Move(m_movement * Time.deltaTime * m_movementSpeed);
 
+       // m_keyboardMovement = new Vector3(m_xValue, 0, m_yValue);
+     //   m_charaControl.Move(m_keyboardMovement * Time.deltaTime * m_movementSpeed);
     }
     public void OnMovement(InputValue readValue)
     {
@@ -51,7 +53,6 @@ public class PlayerMovement : MonoBehaviour
             return;
 
         transform.rotation = Quaternion.LookRotation(movement);
-        //  transform.Rotate(move);
 
         //my attempt at rotating
         ////var targetAngle = Mathf.Atan2(move.x, move.y) * Mathf.Rad2Deg;
@@ -60,6 +61,8 @@ public class PlayerMovement : MonoBehaviour
 
 
     }
+
+
 
     #region Keyboard
     public void OnUpMovement(InputValue readValue)
