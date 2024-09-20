@@ -12,6 +12,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float m_offsetDist = 1.5f; //distance at which the enemy will stop going towards the player
     [SerializeField] private Animator m_anim;
 
+    [SerializeField] private int m_pointObtained;
+    [SerializeField] private float m_multiplicatorBonus;
+
+    private Scoring m_score;
     [SerializeField] private float m_spawnTimer = 2f;
     private float m_timer;
 
@@ -38,6 +42,7 @@ public class Enemy : MonoBehaviour
         m_state = EEnemyStateMach.Spawning;
         m_currentSpeed = m_speed;
         //m_collider.SetActive(false);
+        m_score = Scoring.s_instance;
     }
     void Update()
     {
@@ -128,5 +133,11 @@ public class Enemy : MonoBehaviour
     public void CounterableFalse()
     {
         m_counterable = false;
+    }
+    private void OnDestroy()
+    {
+        m_score.ScoringSystem(m_pointObtained);
+        m_score.Multiplicator(m_multiplicatorBonus);
+        m_score.ResetMultiplicationTimer();
     }
 }
