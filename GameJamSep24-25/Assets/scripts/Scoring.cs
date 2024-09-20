@@ -55,6 +55,7 @@ public class Scoring : MonoBehaviour
     public void LosePoint(float pointToLose)
     {
         m_score -= pointToLose;
+        m_score = Mathf.Clamp(m_score, 0, Mathf.Infinity);
         m_scoreText.text = "Score :" + (int)m_score;
     }
 }
