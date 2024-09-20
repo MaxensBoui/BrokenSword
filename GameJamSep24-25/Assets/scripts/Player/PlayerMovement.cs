@@ -35,10 +35,22 @@ public class PlayerMovement : MonoBehaviour
     public void OnMovement(InputValue readValue)
     {
         Vector2 move = readValue.Get<Vector2>();
-            m_movement = new Vector3(move.x, 0, move.y);
-        transform.Translate(m_movement * Time.deltaTime * m_movementSpeed);
+        Vector3 cam = Camera.main.transform.forward;
+        cam.y = 0;
+        cam.Normalize();
+        Vector3 right = Vector3.Cross(Vector3.up, cam);
 
+        move = move.x * new Vector2(right.x, right.z) + move.y * new Vector2(cam.x, cam.z);
 
+           Vector3 movement = new Vector3(move.x, 0, move.y);
+       // transform.Translate(movement * Time.deltaTime * m_movementSpeed);
+
+        m_movement = movement;
+
+        if (movement == Vector3.zero)
+            return;
+
+        transform.rotation = Quaternion.LookRotation(movement);
         //  transform.Rotate(move);
 
         //my attempt at rotating
