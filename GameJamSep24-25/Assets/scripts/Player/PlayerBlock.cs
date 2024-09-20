@@ -13,8 +13,8 @@ public class PlayerBlock : MonoBehaviour
     [SerializeField] private Transform m_shieldPosition;
     private Enemy m_enemy;
     // private List<GameObject> m_enemies = new List<GameObject>();
-    private bool m_canCounter;
-    private bool m_canTakeShield;
+    [SerializeField] private bool m_canCounter;
+    [SerializeField] private bool m_canTakeShield = false;
 
     [SerializeField] private Animator m_animator;
     [SerializeField] private GameObject m_counterCollider;
@@ -84,7 +84,7 @@ public class PlayerBlock : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy") && m_canCounter)
+        if (other.gameObject.layer == 9 && m_canCounter)
         {
             Instantiate(m_counterParticle, transform.position, Quaternion.identity);
             Destroy(other.gameObject.transform.parent.gameObject);
@@ -102,20 +102,18 @@ public class PlayerBlock : MonoBehaviour
             // StartCoroutine(ShieldRecovery());
         }
 
-        if (other.gameObject.CompareTag("Shield") && !m_canTakeShield)
+        if (other.gameObject.CompareTag("Shield") && m_canTakeShield)
         {
-            Destroy(other.gameObject.transform.parent.gameObject);
-            m_shield.SetActive(true);
+            StartCoroutine(ShieldRecovery());
             m_canCounter = true;
             m_canTakeShield = false;
-        }
-
+            Destroy(other.gameObject);
+        }    
     }
 
     IEnumerator ShieldRecovery()
     {
-        m_shield.SetActive(false);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5.0f);
         m_shield.SetActive(true);
     }
 
