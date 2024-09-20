@@ -140,4 +140,21 @@ public class Enemy : MonoBehaviour
         m_score.Multiplicator(m_multiplicatorBonus);
         m_score.ResetMultiplicationTimer();
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.layer==7)
+        {
+            m_score.ResetMultiplicator();
+            m_score.LosePoint(m_pointObtained * 3);
+        }
+        if (other.gameObject.layer == 8 && m_counterable)
+        {
+            
+            Destroy(this.gameObject);
+            Debug.Log("enteredCollider");
+            Debug.Log(other.gameObject.name);
+            Debug.Log(other.transform.parent.name);
+        }
+    }
 }

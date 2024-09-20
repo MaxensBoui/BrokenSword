@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         m_charaControl.Move(m_movement * Time.deltaTime * m_movementSpeed);
 
        // m_keyboardMovement = new Vector3(m_xValue, 0, m_yValue);
-     //   m_charaControl.Move(m_keyboardMovement * Time.deltaTime * m_movementSpeed);
+       m_charaControl.Move(m_keyboardMovement * Time.deltaTime * m_movementSpeed);
     }
     public void OnMovement(InputValue readValue)
     {
