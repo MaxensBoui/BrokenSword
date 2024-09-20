@@ -169,11 +169,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &514609971 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5082453857300608351, guid: f19a0ea63e8e37146aa08f57c68e5bda, type: 3}
-  m_PrefabInstance: {fileID: 1586271865}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &995338525
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d5cd51c2174f384bacd50dbe9aeac17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_player: {fileID: 514609971}
+  m_player: {fileID: 0}
   m_smoothTime: 0.2
   m_yaw: 0
   m_pitch: 1.06
@@ -553,7 +548,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 975b6c5e518330e439e5b66b75e6beb0, type: 3}
---- !u!1001 &1586271865
+--- !u!1001 &1889095402
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -567,7 +562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 513037985264532692, guid: f19a0ea63e8e37146aa08f57c68e5bda, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.12
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 513037985264532692, guid: f19a0ea63e8e37146aa08f57c68e5bda, type: 3}
       propertyPath: m_LocalPosition.z
@@ -617,6 +612,6 @@ SceneRoots:
   - {fileID: 1241285088}
   - {fileID: 995338527}
   - {fileID: 77856334}
-  - {fileID: 1586271865}
+  - {fileID: 1889095402}
   - {fileID: 1393429031}
   - {fileID: 1211289504}
