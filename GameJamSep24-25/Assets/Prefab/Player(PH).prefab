@@ -331,6 +331,10 @@ MonoBehaviour:
   m_blockDistance: 3
   m_counterParticle: {fileID: 1783598322827911636, guid: 7295a360574bf7346a56dc0e76f0c4b3, type: 3}
   m_shield: {fileID: 0}
+  m_fallingShield: {fileID: 0}
+  m_shieldPosition: {fileID: 0}
+  m_canCounter: 0
+  m_canTakeShield: 0
   m_animator: {fileID: 318429766518813894}
   m_counterCollider: {fileID: 8438881770303974790}
 --- !u!54 &166301179101368528
@@ -5425,13 +5429,13 @@ GameObject:
   - component: {fileID: 7450803840973089945}
   - component: {fileID: 1886371831478645553}
   - component: {fileID: 7113424615829088468}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ColliderCounter
-  m_TagString: Untagged
+  m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7450803840973089945
 Transform:
   m_ObjectHideFlags: 0

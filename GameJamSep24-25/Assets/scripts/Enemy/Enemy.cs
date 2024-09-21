@@ -13,8 +13,9 @@ public class Enemy : MonoBehaviour
     [SerializeField] private Animator m_anim;
 
     [SerializeField] private int m_pointObtained;
+    [SerializeField] private int m_pointLost;
     [SerializeField] private float m_multiplicatorBonus;
-
+    [SerializeField] private GameObject m_destroyVisualize;
     private Scoring m_score;
     [SerializeField] private float m_spawnTimer = 2f;
     private float m_timer;
@@ -139,5 +140,23 @@ public class Enemy : MonoBehaviour
         m_score.ScoringSystem(m_pointObtained);
         m_score.Multiplicator(m_multiplicatorBonus);
         m_score.ResetMultiplicationTimer();
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.layer==7)
+        {
+            m_score.ResetMultiplicator();
+            m_score.LosePoint(m_pointLost);
+        }
+        if (other.gameObject.layer == 8 && m_counterable)
+        {
+            
+            Destroy(this.gameObject);
+            Debug.Log("enteredCollider");
+            Debug.Log(other.gameObject.name);
+            Debug.Log(other.transform.parent.name);
+        }
     }
 }

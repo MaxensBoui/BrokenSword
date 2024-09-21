@@ -84,14 +84,14 @@ public class PlayerBlock : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == 9 && m_canCounter)
+       /* if (other.gameObject.layer == 9 && m_canCounter)
         {
             Instantiate(m_counterParticle, transform.position, Quaternion.identity);
             Destroy(other.gameObject.transform.parent.gameObject);
             Debug.Log("enteredCollider");
             Debug.Log(other.gameObject.name);
             Debug.Log(other.transform.parent.name);
-        }
+        }*/
 
         if (other.gameObject.CompareTag("Thunder"))
         {
