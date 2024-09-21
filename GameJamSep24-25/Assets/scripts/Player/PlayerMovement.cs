@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 m_keyboardMovement;
     private float m_yValue;
     private float m_xValue;
+    private Animator m_animator;
 
     [SerializeField] private ParticleSystem m_walkParticle;
 
@@ -23,16 +24,17 @@ public class PlayerMovement : MonoBehaviour
     {
         m_charaControl = GetComponent<CharacterController>();
         m_playerInput = GetComponent<PlayerInput>();
+        m_animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        m_keyboardMovement = new Vector3(m_xValue, 0, m_yValue); 
+        m_keyboardMovement = new Vector3(m_xValue, 0, m_yValue);
 
         m_charaControl.Move(m_movement * Time.deltaTime * m_movementSpeed);
 
-       // m_keyboardMovement = new Vector3(m_xValue, 0, m_yValue);
-       m_charaControl.Move(m_keyboardMovement * Time.deltaTime * m_movementSpeed);
+        // m_keyboardMovement = new Vector3(m_xValue, 0, m_yValue);
+        m_charaControl.Move(m_keyboardMovement * Time.deltaTime * m_movementSpeed);
     }
     public void OnMovement(InputValue readValue)
     {
@@ -44,15 +46,20 @@ public class PlayerMovement : MonoBehaviour
 
         move = move.x * new Vector2(right.x, right.z) + move.y * new Vector2(cam.x, cam.z);
 
-           Vector3 movement = new Vector3(move.x, 0, move.y);
-       // transform.Translate(movement * Time.deltaTime * m_movementSpeed);
+        Vector3 movement = new Vector3(move.x, 0, move.y);
+        // transform.Translate(movement * Time.deltaTime * m_movementSpeed);
 
         m_movement = movement;
 
         if (movement == Vector3.zero)
+        {
+            m_animator.SetBool("RunWithoutShield", false);
             return;
+        }
+        m_animator.SetBool("RunWithoutShield", true);
 
         transform.rotation = Quaternion.LookRotation(movement);
+
 
         //my attempt at rotating
         ////var targetAngle = Mathf.Atan2(move.x, move.y) * Mathf.Rad2Deg;
@@ -68,12 +75,12 @@ public class PlayerMovement : MonoBehaviour
     public void OnUpMovement(InputValue readValue)
     {
         m_yValue = readValue.Get<float>();
-       
+
     }
     public void OnSideMovement(InputValue readValue)
     {
         m_xValue = readValue.Get<float>();
-        
+
     }
     #endregion
 }

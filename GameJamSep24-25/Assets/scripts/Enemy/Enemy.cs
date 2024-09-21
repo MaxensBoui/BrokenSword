@@ -19,6 +19,8 @@ public class Enemy : MonoBehaviour
     private Scoring m_score;
     [SerializeField] private float m_spawnTimer = 2f;
     private float m_timer;
+    private Animator m_animator;
+    [SerializeField] private Animator m_attackAnimator;
 
     private float m_atkTimer;
     [SerializeField] private float m_atkRate = 2f;
@@ -44,6 +46,7 @@ public class Enemy : MonoBehaviour
         m_currentSpeed = m_speed;
         //m_collider.SetActive(false);
         m_score = Scoring.s_instance;
+        m_animator = GetComponent<Animator>();
     }
     void Update()
     {
@@ -95,7 +98,7 @@ public class Enemy : MonoBehaviour
 
 
         float distance = Mathf.Abs(Vector3.Distance(transform.position, m_target.transform.position));
-
+        m_animator.SetBool("Running", true);
         if (distance > m_offsetDist)
         {
             m_currentSpeed = m_speed;
@@ -112,9 +115,10 @@ public class Enemy : MonoBehaviour
         {
             //attackanim
             //insert attack anim and vfx
+            m_animator.SetBool("Running", false);
 
-
-            m_anim.Play("EnemyAttackAnim");
+            m_animator.SetTrigger("Attack");
+            m_attackAnimator.SetTrigger("Attack");
             m_atkTimer = 0f;
         }
 
@@ -145,14 +149,14 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.layer==7)
+        if (other.gameObject.layer == 7)
         {
             m_score.ResetMultiplicator();
             m_score.LosePoint(m_pointLost);
         }
         if (other.gameObject.layer == 8 && m_counterable)
         {
-            
+
             Destroy(this.gameObject);
             Debug.Log("enteredCollider");
             Debug.Log(other.gameObject.name);

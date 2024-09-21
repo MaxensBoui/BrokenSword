@@ -16,13 +16,16 @@ public class PlayerBlock : MonoBehaviour
     [SerializeField] private bool m_canCounter;
     [SerializeField] private bool m_canTakeShield = false;
 
-    [SerializeField] private Animator m_animator;
-    [SerializeField] private GameObject m_counterCollider;
+    private Animator m_animator;
+    [SerializeField] private Animator m_shieldAnimator;
 
+    [SerializeField] private GameObject m_counterCollider;
     private void Start()
     {
         m_canCounter = true;
         m_canTakeShield = false;
+        m_animator = GetComponent<Animator>();
+        // m_shieldAnimator = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -54,8 +57,10 @@ public class PlayerBlock : MonoBehaviour
         float value = rea.Get<float>();
         if (value > 0)
         {
+
             print("t");
-            m_animator.Play("PlayerCounter");
+            m_shieldAnimator.SetTrigger("Attack");
+            m_animator.SetTrigger("Attack");
 
             //    if (m_canCounter)
             //    {
@@ -84,14 +89,14 @@ public class PlayerBlock : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-       /* if (other.gameObject.layer == 9 && m_canCounter)
-        {
-            Instantiate(m_counterParticle, transform.position, Quaternion.identity);
-            Destroy(other.gameObject.transform.parent.gameObject);
-            Debug.Log("enteredCollider");
-            Debug.Log(other.gameObject.name);
-            Debug.Log(other.transform.parent.name);
-        }*/
+        /* if (other.gameObject.layer == 9 && m_canCounter)
+         {
+             Instantiate(m_counterParticle, transform.position, Quaternion.identity);
+             Destroy(other.gameObject.transform.parent.gameObject);
+             Debug.Log("enteredCollider");
+             Debug.Log(other.gameObject.name);
+             Debug.Log(other.transform.parent.name);
+         }*/
 
         if (other.gameObject.CompareTag("Thunder"))
         {
@@ -108,7 +113,7 @@ public class PlayerBlock : MonoBehaviour
             m_canCounter = true;
             m_canTakeShield = false;
             Destroy(other.gameObject);
-        }    
+        }
     }
 
     IEnumerator ShieldRecovery()
