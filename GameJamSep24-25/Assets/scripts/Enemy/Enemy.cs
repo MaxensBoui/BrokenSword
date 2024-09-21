@@ -106,6 +106,8 @@ public class Enemy : MonoBehaviour
         else
         {
             m_currentSpeed = 0;
+            m_animator.SetBool("Running", false);
+
         }
 
         m_atkTimer += Time.deltaTime;
