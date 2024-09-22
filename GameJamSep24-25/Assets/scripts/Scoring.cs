@@ -11,6 +11,7 @@ public class Scoring : MonoBehaviour
     private float m_score;
     public float Score => m_score;
     [SerializeField] private TextMeshProUGUI m_scoreText;
+    [SerializeField] private TextMeshProUGUI m_finalScoreText;
     [SerializeField] private TextMeshProUGUI m_multiplicatorText;
     private float m_multiplicator = 1.0f;
     private float m_multiplicatorTimer;
@@ -33,6 +34,7 @@ public class Scoring : MonoBehaviour
         if (m_multiplicatorTimer <= 0)
             m_multiplicator = 1;
         m_multiplicatorText.text = "x" + m_multiplicator;
+
     }
 
     public void ResetMultiplicator()

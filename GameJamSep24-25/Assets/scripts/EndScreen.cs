@@ -15,6 +15,7 @@ public class EndScreen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1.0f;
         m_score = GetComponent<Scoring>();
         m_lightningCount = 0;
         m_endScreen.SetActive(false);
@@ -24,7 +25,11 @@ public class EndScreen : MonoBehaviour
     void Update()
     {
         if (m_lightningCount >= 4)
+        {
             m_endScreen.SetActive(true);
+            Time.timeScale = 0.0f;
+
+        }
 
         m_endScore.text = "Final score :" + m_score.Score;
     }
