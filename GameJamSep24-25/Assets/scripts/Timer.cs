@@ -13,7 +13,8 @@ public class Timer : MonoBehaviour
     [SerializeField] private GameObject m_lightning;
     [SerializeField] private TextMeshProUGUI m_timerTextUI;
     [SerializeField] private string m_timerText;
-
+    private CameraShake m_cam;
+    [SerializeField] private float m_shakeForce;
 
 
 
@@ -23,6 +24,7 @@ public class Timer : MonoBehaviour
         m_currentTime = 30.0f;
         m_minTime = 0.0f;
         m_resetCurrentTime = 30.0f;
+        m_cam = Camera.main.GetComponent<CameraShake>();
     }
 
     // Update is called once per frame
@@ -45,6 +47,7 @@ public class Timer : MonoBehaviour
             //Instantiate(m_lightning);
             Vector3 instPos = new Vector3(transform.position.x, s_yOffset, transform.position.z);
             Instantiate(m_lightning,instPos, Quaternion.identity);
+            m_cam.Shake(m_shakeForce);
             //
 
             m_currentTime = m_resetCurrentTime;

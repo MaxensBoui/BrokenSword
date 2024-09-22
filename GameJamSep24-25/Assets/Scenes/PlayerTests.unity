@@ -1854,6 +1854,10 @@ PrefabInstance:
       propertyPath: m_lightning
       value: 
       objectReference: {fileID: 6691626706362434758, guid: 006f3ba442a26724a989782978692536, type: 3}
+    - target: {fileID: 7918738379928232058, guid: f19a0ea63e8e37146aa08f57c68e5bda, type: 3}
+      propertyPath: m_shakeForce
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
