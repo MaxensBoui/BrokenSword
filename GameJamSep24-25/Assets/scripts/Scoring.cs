@@ -9,6 +9,7 @@ public class Scoring : MonoBehaviour
 
     public static Scoring s_instance;
     private float m_score;
+    public float Score => m_score;
     [SerializeField] private TextMeshProUGUI m_scoreText;
     [SerializeField] private TextMeshProUGUI m_multiplicatorText;
     private float m_multiplicator = 1.0f;
