@@ -396,9 +396,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44dc07b0b5582284db8797fd6ae9375b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_lightning: {fileID: 0}
+  m_lightning: {fileID: 6691626706362434758, guid: 006f3ba442a26724a989782978692536, type: 3}
   m_timerTextUI: {fileID: 0}
   m_timerText: 
+  m_shakeForce: 1
 --- !u!1 &5970617870780651394
 GameObject:
   m_ObjectHideFlags: 0
