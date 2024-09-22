@@ -31,7 +31,7 @@ public class EndScreen : MonoBehaviour
 
         }
 
-        m_endScore.text = "Final score :" + m_score.Score;
+        //m_endScore.text = "Final score " + m_score.Score;
     }
 
     public void LightningCount()
