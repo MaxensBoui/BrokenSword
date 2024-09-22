@@ -6,7 +6,6 @@ public class CameraShake : MonoBehaviour
 {
     [SerializeField] private float m_shakeDuration = .5f;
     public static CameraShake s_instance;
-    [SerializeField] private float m_shakeForce = 3f;
 
     private bool m_isShaking = false;
     private float m_trauma;
