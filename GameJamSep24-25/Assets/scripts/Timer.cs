@@ -9,7 +9,7 @@ public class Timer : MonoBehaviour
     private float m_currentTime = 30.0f;
     private float m_timeTextActive = 5.0f;
     private float m_minTime = 0.0f;
-    private float m_resetCurrentTime = 10.0f;
+    private float m_resetCurrentTime = 30.0f;
     [SerializeField] private GameObject m_lightning;
     [SerializeField] private TextMeshProUGUI m_timerTextUI;
     [SerializeField] private string m_timerText;
@@ -22,9 +22,9 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_currentTime = 10.0f;
+        m_currentTime = 30.0f;
         m_minTime = 0.0f;
-        m_resetCurrentTime = 10.0f;
+        m_resetCurrentTime = 30.0f;
         m_cam = Camera.main.GetComponent<CameraShake>();
     }
 
