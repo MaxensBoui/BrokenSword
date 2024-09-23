@@ -14,6 +14,7 @@ public class PlayerBlock : MonoBehaviour
     private Enemy m_enemy;
     [SerializeField] private bool m_canCounter;
     [SerializeField] private bool m_canTakeShield = false;
+    [SerializeField] private bool m_thunderCollision = false;
 
     private Animator m_animator;
     [SerializeField] private Animator m_shieldAnimator;
@@ -23,6 +24,7 @@ public class PlayerBlock : MonoBehaviour
     {
         m_canCounter = true;
         m_canTakeShield = false;
+        m_thunderCollision = false;
         m_animator = GetComponent<Animator>();
         // m_shieldAnimator = GetComponentInChildren<Animator>();
     }
@@ -71,17 +73,22 @@ public class PlayerBlock : MonoBehaviour
         if (other.gameObject.layer==10)
         {
             Debug.Log("thundaa");
-            m_canTakeShield = true;
+//            m_canTakeShield = true;
             m_canCounter = false;
             m_shield.SetActive(false);
-            Instantiate(m_fallingShield, m_shieldPosition.position, Quaternion.identity);
-            // StartCoroutine(ShieldRecovery());
+            if (m_thunderCollision == false)
+            {
+                Instantiate(m_fallingShield, m_shieldPosition.position, Quaternion.identity);
+                m_thunderCollision = true;
+            }
+             StartCoroutine(ShieldRecovery());
         }
 
-        if (other.gameObject.layer == 8 && m_canTakeShield)
+        if (other.gameObject.layer == 8 && m_canTakeShield == true)
         {
-            StartCoroutine(ShieldRecovery());
             m_canCounter = true;
+            m_shield.SetActive(true);
+            m_thunderCollision = false;
             m_canTakeShield = false;
             Destroy(other.gameObject);
         }
@@ -90,7 +97,8 @@ public class PlayerBlock : MonoBehaviour
     IEnumerator ShieldRecovery()
     {
         yield return new WaitForSeconds(5.0f);
-        m_shield.SetActive(true);
+        m_canTakeShield = true;
+        // m_shield.SetActive(true);
     }
 
 

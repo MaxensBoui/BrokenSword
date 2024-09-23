@@ -172,11 +172,7 @@ public class Enemy : MonoBehaviour
         }
         if (other.gameObject.layer == 8 && m_counterable)
         {
-
-            Destroy(this.gameObject);
-            Debug.Log("enteredCollider");
-            Debug.Log(other.gameObject.name);
-            Debug.Log(other.transform.parent.name);
+            Die();
         }
     }
 }
