@@ -54,11 +54,15 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Dissolve: -3
+    - _DistorsionNoise: 10
     - _FresnelOnOff: 0
     - _Multiply: 2.78
     - _Power: -0.05
     - _QueueControl: 0
     - _QueueOffset: 0
+    - _cutBorder: 1
     m_Colors:
     - _Color: {r: 1.6981132, g: 0.5739549, b: 0.20024917, a: 0}
+    - _DissolveColor: {r: 14.18868, g: 1.525951, b: 1.525951, a: 0}
   m_BuildTextureStacks: []

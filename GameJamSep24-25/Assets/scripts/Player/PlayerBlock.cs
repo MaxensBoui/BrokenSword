@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerBlock : MonoBehaviour
 {
     [SerializeField] private float m_blockDistance = 3.0f;
-    [SerializeField] private GameObject m_counterParticle;
+    public ParticleSystem m_counterParticle;
     [SerializeField] private GameObject m_shield;
     [SerializeField] private GameObject m_fallingShield;
     [SerializeField] private Transform m_shieldPosition;

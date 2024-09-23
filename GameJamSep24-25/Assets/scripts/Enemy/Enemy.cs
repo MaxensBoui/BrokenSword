@@ -11,7 +11,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float m_deathTimer = 2f; //Timer at which the enemy disappears, must be after the VFX and Animation are done (value is a placeholder)
     [SerializeField] private float m_offsetDist = 1.5f; //distance at which the enemy will stop going towards the player
     [SerializeField] private Animator m_anim;
-
+    private PlayerBlock m_player;
     [SerializeField] private int m_pointObtained;
     [SerializeField] private int m_pointLost;
     [SerializeField] private float m_multiplicatorBonus;
@@ -41,6 +41,10 @@ public class Enemy : MonoBehaviour
         Dead
     }
 
+    private void Awake()
+    {
+        m_player = FindAnyObjectByType<PlayerBlock>();
+    }
     void Start()
     {
         if (m_target == null) { m_target = GameObject.FindWithTag("Player"); }
@@ -122,7 +126,7 @@ public class Enemy : MonoBehaviour
             m_animator.SetBool("Running", false);
 
             m_animator.SetTrigger("Attack");
-            m_attackAnimator.SetTrigger("Attack");
+         //   m_attackAnimator.SetTrigger("Attack");
             m_atkTimer = 0f;
         }
 
@@ -172,6 +176,7 @@ public class Enemy : MonoBehaviour
         }
         if (other.gameObject.layer == 8 && m_counterable)
         {
+            m_player.m_counterParticle.Play();
             Die();
         }
     }
