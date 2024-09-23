@@ -337,7 +337,7 @@ MonoBehaviour:
   m_blockDistance: 3
   m_counterParticle: {fileID: 5874007548229639195, guid: 7295a360574bf7346a56dc0e76f0c4b3, type: 3}
   m_shield: {fileID: 2822729689686235346}
-  m_fallingShield: {fileID: 3108417211959252358, guid: 1e6d3044dc6b431428ae9af8b6b7c607, type: 3}
+  m_fallingShield: {fileID: 2837880783224459032, guid: 2118cb1586555d34f88f3761360adadc, type: 3}
   m_shieldPosition: {fileID: 3199676822614835816}
   m_canCounter: 0
   m_canTakeShield: 0

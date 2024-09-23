@@ -6,7 +6,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     private GameObject m_target;
-    [SerializeField] private float m_speed = 10f;
+    [SerializeField] private float m_speed = 9.0f;
     [SerializeField] private float m_currentSpeed;
     [SerializeField] private float m_deathTimer = 2f; //Timer at which the enemy disappears, must be after the VFX and Animation are done (value is a placeholder)
     [SerializeField] private float m_offsetDist = 1.5f; //distance at which the enemy will stop going towards the player
