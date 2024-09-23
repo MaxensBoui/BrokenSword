@@ -22,7 +22,7 @@ public class Scoring : MonoBehaviour
         if (s_instance == null)
             s_instance = this;
 
-        m_scoreText.text = "Score :" + 0;
+        m_scoreText.text = "Score " + 0;
         m_multiplicatorText.text = "x" + m_multiplicator;
         m_multiplicatorTimer = m_multiplicatorTime;
 
@@ -53,12 +53,12 @@ public class Scoring : MonoBehaviour
     public void ScoringSystem(float blockPoint)
     {
         m_score += blockPoint * m_multiplicator;
-        m_scoreText.text = "Score :" + (int)m_score;
+        m_scoreText.text = "Score " + (int)m_score;
     }
     public void LosePoint(float pointToLose)
     {
         m_score -= pointToLose;
         m_score = Mathf.Clamp(m_score, 0, Mathf.Infinity);
-        m_scoreText.text = "Score :" + (int)m_score;
+        m_scoreText.text = "Score " + (int)m_score;
     }
 }

@@ -8,7 +8,7 @@ public class CameraShake : MonoBehaviour
     public static CameraShake s_instance;
 
     private bool m_isShaking = false;
-    private float m_trauma;
+    [SerializeField] private float m_trauma;
 
     void Start()
     {

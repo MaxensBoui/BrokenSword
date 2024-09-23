@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     private float m_timer;
     private Animator m_animator;
     [SerializeField] private Animator m_attackAnimator;
-    [SerializeField] private GameObject m_attackAnticipationParticle;
+    [SerializeField] private ParticleSystem m_attackAnticipationParticle;
     [SerializeField] private Transform m_handJoint;
 
     private float m_atkTimer;
@@ -132,13 +132,24 @@ public class Enemy : MonoBehaviour
     {
         //insert death VFX
         //insert death animation
-        Destroy(gameObject, m_deathTimer);
+        m_anim.SetTrigger("Die");
+        //Destroy(gameObject, m_deathTimer);
     }
 
+    private void EnemyDie()
+    {
+        Destroy(gameObject);
+    }
+
+    public void PlayParticle()
+    {
+        m_attackAnticipationParticle.Play();
+    }
     public void CounterableTrue()
     {
         m_counterable = true;
-        Instantiate(m_attackAnticipationParticle, m_handJoint.position, Quaternion.identity);
+
+        //Instantiate(m_attackAnticipationParticle, m_handJoint.position, Quaternion.identity);
     }
     public void CounterableFalse()
     {

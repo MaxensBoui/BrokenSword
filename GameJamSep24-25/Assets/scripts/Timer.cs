@@ -32,19 +32,18 @@ public class Timer : MonoBehaviour
     {
         m_currentTime -= Time.deltaTime;
         m_timerText = m_currentTime.ToString("F0");
-        // m_timerTextUI.text = m_timerText;
-      /*  if (m_currentTime > m_timeTextActive)
+        m_timerTextUI.text = m_timerText;
+        if (m_currentTime > m_timeTextActive)
         {
             m_timerTextUI.enabled = false;
         }
         else
         {
             m_timerTextUI.enabled = true;
-        }*/
+        }
         if (m_currentTime <= m_minTime)
         {
             //code for spawn lightning
-            //Instantiate(m_lightning);
             Vector3 instPos = new Vector3(transform.position.x, s_yOffset, transform.position.z);
             Instantiate(m_lightning,instPos, Quaternion.identity);
             m_cam.Shake(m_shakeForce);
