@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8343735818268640228}
   - component: {fileID: 4928411407945567297}
   - component: {fileID: 7170235667673577611}
+  - component: {fileID: 2613972697349691649}
   m_Layer: 0
   m_Name: VARIANT_HOUSE (3)
   m_TagString: Untagged
@@ -83,3 +84,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2613972697349691649
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8683282208215751006}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.9276366, y: 7.3303843, z: 7.817844}
+  m_Center: {x: 2.406314, y: 3.634426, z: 3.0577836}

@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 5413281459188034347}
   - component: {fileID: 8984695941803238542}
   - component: {fileID: 6581159913932951620}
+  - component: {fileID: 3759734916315476198}
   m_Layer: 0
   m_Name: FireCamp
   m_TagString: Untagged
@@ -191,6 +192,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3759734916315476198
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4635336938586124689}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.4290959, y: 1.1389759, z: 0.8311256}
+  m_Center: {x: 0, y: 0.5023563, z: 0}
 --- !u!1 &7821408583167166120
 GameObject:
   m_ObjectHideFlags: 0

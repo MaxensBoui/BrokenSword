@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8871974230477719711}
+  - component: {fileID: 8610375606162190555}
   m_Layer: 0
   m_Name: Barrel 1
   m_TagString: Untagged
@@ -26,12 +27,33 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.41, y: 1.8595364, z: 9.99}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6697458, y: 0.6697458, z: 0.6697458}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7955131123722011327}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8610375606162190555
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5657633072565027753}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.75, y: 0.75, z: 0.75}
+  m_Center: {x: 0, y: 0.42, z: 0}
 --- !u!1001 &7632744739810813268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -96,6 +118,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 524eb12b47f2dd64fbbddea8cfe50524, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 524eb12b47f2dd64fbbddea8cfe50524, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: bd4d46c97c0107e408b771a9da52b438, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 524eb12b47f2dd64fbbddea8cfe50524, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: bd4d46c97c0107e408b771a9da52b438, type: 2}
+    - target: {fileID: -5754084199372789682, guid: 524eb12b47f2dd64fbbddea8cfe50524, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -4545423930167495100, guid: a041a329cce5f3742964a532360c1779, type: 3}
     - target: {fileID: 919132149155446097, guid: 524eb12b47f2dd64fbbddea8cfe50524, type: 3}
       propertyPath: m_Name
       value: Barrel_2

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8871974230477719711}
+  - component: {fileID: 3405415523542581770}
   m_Layer: 0
   m_Name: Barrel
   m_TagString: Untagged
@@ -32,6 +33,27 @@ Transform:
   - {fileID: 4828155258146800258}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3405415523542581770
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5657633072565027753}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.75, y: 0.75, z: 0.75}
+  m_Center: {x: 0, y: 0.41, z: 0}
 --- !u!1001 &4939240277974656361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -96,6 +118,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a16383833fb554d4082622141823a92b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3912b39feeed0954abd80b25f566a5ac, type: 2}
     - target: {fileID: 919132149155446097, guid: a16383833fb554d4082622141823a92b, type: 3}
       propertyPath: m_Name
       value: Barrel_1
