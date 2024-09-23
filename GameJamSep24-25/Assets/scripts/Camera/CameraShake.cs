@@ -33,12 +33,13 @@ public class CameraShake : MonoBehaviour
         m_trauma += shakeForce;
         while (timer < m_shakeDuration)
         {
-            timer += Time.deltaTime;
+            timer += Time.unscaledDeltaTime;
             Vector3 newPosition = transform.position + Random.insideUnitSphere * m_trauma;
             transform.position = newPosition;
             shakeForce = Mathf.Pow((1 - (timer / m_shakeDuration)), 2);
             yield return null;
         }
+        m_trauma = 0;
         m_isShaking = false;
 
     }

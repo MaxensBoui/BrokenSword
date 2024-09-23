@@ -27,11 +27,11 @@ public class EndScreen : MonoBehaviour
         if (m_lightningCount >= 4)
         {
             m_endScreen.SetActive(true);
+            m_endScore.text = "Final score " + m_score.Score;
             Time.timeScale = 0.0f;
 
         }
 
-        //m_endScore.text = "Final score " + m_score.Score;
     }
 
     public void LightningCount()

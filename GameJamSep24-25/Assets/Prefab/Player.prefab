@@ -299,7 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_movementSpeed: 10
-  m_walkParticle: {fileID: 0}
+  m_walkParticle: {fileID: 1275435075655062018}
 --- !u!95 &318429766518813894
 Animator:
   serializedVersion: 5
@@ -335,9 +335,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_blockDistance: 3
   m_counterParticle: {fileID: 1783598322827911636, guid: 7295a360574bf7346a56dc0e76f0c4b3, type: 3}
-  m_shield: {fileID: 0}
-  m_fallingShield: {fileID: 0}
-  m_shieldPosition: {fileID: 0}
+  m_shield: {fileID: 2822729689686235346}
+  m_fallingShield: {fileID: 3108417211959252358, guid: 1e6d3044dc6b431428ae9af8b6b7c607, type: 3}
+  m_shieldPosition: {fileID: 3199676822614835816}
   m_canCounter: 0
   m_canTakeShield: 0
   m_shieldAnimator: {fileID: 6700980632908119599}
@@ -400,6 +400,7 @@ MonoBehaviour:
   m_timerTextUI: {fileID: 0}
   m_timerText: 
   m_shakeForce: 1
+  m_lightningCount: {fileID: 0}
 --- !u!1 &5970617870780651394
 GameObject:
   m_ObjectHideFlags: 0
