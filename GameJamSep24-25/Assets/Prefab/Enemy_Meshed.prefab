@@ -188,8 +188,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7188931919634916207}
   - {fileID: 1843093922182827677}
@@ -219,6 +219,8 @@ MonoBehaviour:
   m_destroyVisualize: {fileID: 1783598322827911636, guid: 7295a360574bf7346a56dc0e76f0c4b3, type: 3}
   m_spawnTimer: 2
   m_attackAnimator: {fileID: 5613778455506787812}
+  m_attackAnticipationParticle: {fileID: 6440095605958342281, guid: aa32cf3d6fdc02243aa9149c361b9728, type: 3}
+  m_handJoint: {fileID: 5837949124875091473}
   m_atkRate: 5
 --- !u!54 &5753953829104836862
 Rigidbody:

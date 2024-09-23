@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour
     private float m_timer;
     private Animator m_animator;
     [SerializeField] private Animator m_attackAnimator;
+    [SerializeField] private GameObject m_attackAnticipationParticle;
+    [SerializeField] private Transform m_handJoint;
 
     private float m_atkTimer;
     [SerializeField] private float m_atkRate = 2f;
@@ -136,6 +138,7 @@ public class Enemy : MonoBehaviour
     public void CounterableTrue()
     {
         m_counterable = true;
+        Instantiate(m_attackAnticipationParticle, m_handJoint.position, Quaternion.identity);
     }
     public void CounterableFalse()
     {
